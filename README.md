@@ -1,6 +1,8 @@
-# Grids
+# Charts
 
 Google charts for PHP
+
+**status: pre-alpha**
 
 ## Requirements
 
