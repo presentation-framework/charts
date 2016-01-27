@@ -8,7 +8,7 @@ use Presentation\Framework\Component\ManagedList\ManagedList;
 
 class Chart extends ManagedList
 {
-    public function __construct($dataProvider, array $components)
+    public function __construct($dataProvider, array $components = [])
     {
         parent::__construct($dataProvider, null, $components);
     }

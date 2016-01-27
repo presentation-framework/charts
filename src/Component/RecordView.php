@@ -14,7 +14,7 @@ class RecordView extends AbstractDataView implements InitializableInterface
 {
     use InitializableTrait;
 
-    private $values;
+    private $values = [];
 
     /**
      * @return Chart
@@ -33,6 +33,16 @@ class RecordView extends AbstractDataView implements InitializableInterface
         }
         $this->values[] = $row;
         return '';
+    }
+
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    public function resetValues()
+    {
+        $this->values = [];
     }
 
 }
