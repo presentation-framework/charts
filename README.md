@@ -2,6 +2,8 @@
 
 Google charts for PHP
 
+**status: pre-alpha**
+
 ## Requirements
 
 * php 5.5+
