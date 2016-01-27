@@ -1,4 +1,4 @@
-# Grids
+# Charts
 
 Google charts for PHP
 
