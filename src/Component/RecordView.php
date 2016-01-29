@@ -26,9 +26,18 @@ class RecordView extends AbstractDataView implements InitializableInterface
 
     public function renderData()
     {
+        /** @var FieldView[] $fieldViews */
+        $fieldViews = $this->getChart()->children()->filterByType(FieldView::class);
+        if (count($this->values) === 0 ) {
+            $header  = [];
+            foreach($fieldViews as $fieldView) {
+                $header[] = $fieldView->getLabel();
+            }
+            $this->values = $header;
+        }
         $row = [];
-        /** @var FieldView $fieldView */
-        foreach($this->getChart()->children()->filterByType(FieldView::class) as $fieldView) {
+
+        foreach($fieldViews as $fieldView) {
             $row[] = \mp\getValue($this->data, $fieldView->getDataFieldName());
         }
         $this->values[] = $row;

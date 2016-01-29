@@ -5,10 +5,11 @@ namespace Presentation\Charts\Component;
 
 use Presentation\Charts\Chart;
 use Presentation\Framework\Base\AbstractComponent;
+use Presentation\Framework\Component\TemplateView;
 use Presentation\Framework\Initialization\InitializableInterface;
 use Presentation\Framework\Initialization\InitializableTrait;
 
-class ChartContainer extends AbstractComponent implements InitializableInterface
+class ChartContainer extends TemplateView implements InitializableInterface
 {
     use InitializableTrait;
     public function render()
@@ -25,7 +26,7 @@ class ChartContainer extends AbstractComponent implements InitializableInterface
         $recordView = $chart->getRecordView();
         $recordView->resetValues();
         $this->renderChildren();
-        $values = json_encode($recordView->getValues(), JSON_PRETTY_PRINT);
+        $values = json_encode($recordView->getValues());
         //return $this->renderChildren();
         return "
         <div id=\"{$chart->getComponentName()}\" style=\"width: 1600px; height: 700px\"></div>
